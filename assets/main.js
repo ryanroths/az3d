@@ -7,7 +7,7 @@
   if (!form) return;
   var status = document.getElementById('form-status');
   var endpoint = form.getAttribute('data-endpoint') || '';
-  var TO = 'hello@az3d.co';
+  var TO = 'hello@az3d.net';
 
   function show(msg, ok) {
     status.hidden = false;
