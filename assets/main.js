@@ -27,7 +27,7 @@
     if (form._gotcha && form._gotcha.value) return; // honeypot
 
     var f = fields();
-    f._subject = 'AZ3D quote — ' + f.name;
+    f._subject = 'AZ3D quote - ' + f.name;
 
     // No backend configured â†’ open mail client with everything pre-filled.
     if (!endpoint) {
