@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Get a Quote — AZ3D</title>
-  <meta name="description" content="Request a 3D printing quote from AZ3D. Send your STL/3MF, pick a material, hear back within 24 hours.">
+  <title>Start an Order — AZ3D Custom</title>
+  <meta name="description" content="Start a custom 3D print order with AZ3D Custom in Mesa, AZ. Tell us the occasion, names and colors — or send your own STL/3MF — and get a quote within 24 hours.">
   <link rel="canonical" href="https://az3d.net/quote.html">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 <header>
   <div class="wrap">
-    <a class="logo" href="./">AZ<span>3D</span></a>
+    <a class="logo" href="./"><img src="assets/mark.svg" alt="">AZ3D <span>Custom</span></a>
     <nav>
-      <a href="./#materials">Materials</a>
+      <a href="./#gallery">Gallery</a>
       <a href="about.html">About</a>
     </nav>
   </div>
@@ -25,67 +25,77 @@
 
 <section>
   <div class="wrap">
-    <div class="eyebrow">Quote request</div>
-    <h1>Tell us what to print.</h1>
-    <p class="muted" style="max-width:620px">We reply within 24 hours with price and lead time. No commitment until you approve.</p>
+    <div class="eyebrow">Start an order</div>
+    <h1>Tell us what you're celebrating.</h1>
+    <p class="muted" style="max-width:620px">We reply within 24 hours with a quote and a design to approve. No commitment until you say go.</p>
 
-    <!--
-      FORM BACKEND: set data-endpoint to your Formspree / Web3Forms / Cloudflare Worker URL.
-      Until set, submit falls back to a pre-filled mailto: link.
-    -->
     <form id="quote-form" data-endpoint="https://formspree.io/f/mvkoeqdo" method="POST" novalidate>
       <div class="row">
-        <label>Name <input name="name" required autocomplete="name"></label>
+        <label>Your name <input name="name" required autocomplete="name"></label>
         <label>Email <input name="email" type="email" required autocomplete="email"></label>
       </div>
-
-      <label>File link
-        <small>Share link to your STL / 3MF / STEP (Google Drive, Dropbox, Printables, Thingiverse…). Or attach the file when you reply to our quote email.</small>
-        <input name="file_link" type="url" placeholder="https://">
-      </label>
-
       <div class="row">
-        <label>Material
-          <select name="material">
-            <option>PLA / PLA+</option>
-            <option selected>PETG</option>
-            <option>TPU 95A</option>
-            <option>ASA</option>
-            <option>PETG-CF / PA-CF</option>
-            <option>Not sure — recommend one</option>
-          </select>
-        </label>
-        <label>Quantity <input name="qty" type="number" min="1" value="1"></label>
+        <label>Phone <small>optional — for texts about your order</small><input name="phone" type="tel" autocomplete="tel"></label>
+        <label>Need it by <input name="need_by" type="date"></label>
       </div>
 
-      <div class="row">
-        <label>Color <small>e.g. black, white, orange, “don't care”</small><input name="color" placeholder="black"></label>
-        <label>Delivery
-          <select name="delivery">
-            <option>Ship (US)</option>
-            <option>Pickup — Mesa, AZ</option>
-          </select>
+      <fieldset>
+        <legend>The order</legend>
+        <div class="row">
+          <label>What is it?
+            <select name="product">
+              <option>Cake topper</option>
+              <option>Name tag / sign</option>
+              <option>Party favors</option>
+              <option>Baby / milestone</option>
+              <option>Kids / classroom</option>
+              <option>Wedding</option>
+              <option>Sports</option>
+              <option>Seasonal / ornament</option>
+              <option>QR / NFC tag</option>
+              <option>Cookie cutter</option>
+              <option>Print my own file (STL / 3MF)</option>
+              <option>Something else</option>
+            </select>
+          </label>
+          <label>How many <input name="qty" type="number" min="1" value="1"></label>
+        </div>
+        <label>Names / text to include <small>Exactly as it should appear — spelling matters!</small><input name="text" placeholder="e.g. Lucy · Happy 6th Birthday"></label>
+        <label>Colors / theme <small>e.g. pink &amp; gold, dinosaurs, school colors</small><input name="colors"></label>
+        <label>Tell us more
+          <small>Occasion, size, inspiration links, anything we should know.</small>
+          <textarea name="notes"></textarea>
         </label>
-      </div>
+      </fieldset>
 
-      <label>Notes
-        <small>What is it for? Tolerances, strength, layer height, deadline, anything else.</small>
-        <textarea name="notes"></textarea>
+      <fieldset>
+        <legend>Have a file? (optional)</legend>
+        <label>Link to your STL / 3MF / STEP or inspiration photos
+          <small>Google Drive, Dropbox, Printables, Thingiverse, Pinterest… Or just reply to our email with the file attached.</small>
+          <input name="file_link" type="url" placeholder="https://">
+        </label>
+      </fieldset>
+
+      <label>Delivery
+        <select name="delivery">
+          <option>Pickup — Mesa, AZ (free)</option>
+          <option>Ship (US)</option>
+        </select>
       </label>
 
       <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
-      <div>
-        <button class="btn lg" type="submit">Send quote request</button>
-      </div>
+      <div><button class="btn lg" type="submit">Send my request</button></div>
       <div id="form-status" class="notice" hidden></div>
     </form>
+
+    <p class="muted" style="margin-top:32px">Prefer to talk? Call or text <a href="tel:+14807172612">(480) 717-2612</a> or DM <a href="https://www.instagram.com/az3dcustom/" rel="noopener" target="_blank">@az3dcustom</a>.</p>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <div>© <span id="yr"></span> AZ3D · Mesa, Arizona</div>
+    <div>© <span id="yr"></span> AZ3D Custom · Mesa, Arizona</div>
     <div><a href="mailto:hello@az3d.net">hello@az3d.net</a></div>
   </div>
 </footer>

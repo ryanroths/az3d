@@ -27,7 +27,7 @@
     if (form._gotcha && form._gotcha.value) return; // honeypot
 
     var f = fields();
-    f._subject = 'AZ3D quote - ' + f.name;
+    f._subject = 'AZ3D Custom order - ' + f.name;
 
     // No backend configured → open mail client with everything pre-filled.
     if (!endpoint) {
@@ -48,11 +48,11 @@
     }).then(function (r) {
       if (!r.ok) throw new Error(r.status);
       form.reset();
-      show('Got it. Quote within 24 hours to ' + f.email + '.', true);
+      show('Got it! We\'ll reply within 24 hours to ' + f.email + '.', true);
     }).catch(function () {
       show('Something broke. Email ' + TO + ' instead — sorry.', false);
     }).finally(function () {
-      btn.disabled = false; btn.textContent = 'Send quote request';
+      btn.disabled = false; btn.textContent = 'Send my request';
     });
   });
 })();
