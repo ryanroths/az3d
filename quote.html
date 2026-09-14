@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Get a Quote — AZ3D</title>
+  <meta name="description" content="Request a 3D printing quote from AZ3D. Send your STL/3MF, pick a material, hear back within 24 hours.">
+  <link rel="canonical" href="https://az3d.co/quote.html">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="logo" href="./">AZ<span>3D</span></a>
+    <nav>
+      <a href="./#materials">Materials</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Quote request</div>
+    <h1>Tell us what to print.</h1>
+    <p class="muted" style="max-width:620px">We reply within 24 hours with price and lead time. No commitment until you approve.</p>
+
+    <!--
+      FORM BACKEND: set data-endpoint to your Formspree / Web3Forms / Cloudflare Worker URL.
+      Until set, submit falls back to a pre-filled mailto: link.
+    -->
+    <form id="quote-form" data-endpoint="" method="POST" novalidate>
+      <div class="row">
+        <label>Name <input name="name" required autocomplete="name"></label>
+        <label>Email <input name="email" type="email" required autocomplete="email"></label>
+      </div>
+
+      <label>File link
+        <small>Share link to your STL / 3MF / STEP (Google Drive, Dropbox, Printables, Thingiverse…). Or attach the file when you reply to our quote email.</small>
+        <input name="file_link" type="url" placeholder="https://">
+      </label>
+
+      <div class="row">
+        <label>Material
+          <select name="material">
+            <option>PLA / PLA+</option>
+            <option selected>PETG</option>
+            <option>TPU 95A</option>
+            <option>ASA</option>
+            <option>PETG-CF / PA-CF</option>
+            <option>Not sure — recommend one</option>
+          </select>
+        </label>
+        <label>Quantity <input name="qty" type="number" min="1" value="1"></label>
+      </div>
+
+      <div class="row">
+        <label>Color <small>e.g. black, white, orange, “don't care”</small><input name="color" placeholder="black"></label>
+        <label>Delivery
+          <select name="delivery">
+            <option>Ship (US)</option>
+            <option>Pickup — Mesa, AZ</option>
+          </select>
+        </label>
+      </div>
+
+      <label>Notes
+        <small>What is it for? Tolerances, strength, layer height, deadline, anything else.</small>
+        <textarea name="notes"></textarea>
+      </label>
+
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+      <div>
+        <button class="btn lg" type="submit">Send quote request</button>
+      </div>
+      <div id="form-status" class="notice" hidden></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© <span id="yr"></span> AZ3D · Mesa, Arizona</div>
+    <div><a href="mailto:hello@az3d.co">hello@az3d.co</a></div>
+  </div>
+</footer>
+<script src="assets/main.js" defer></script>
+</body>
+</html>

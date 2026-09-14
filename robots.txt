@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://az3d.co/sitemap.xml
