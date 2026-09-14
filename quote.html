@@ -70,8 +70,15 @@
 
       <fieldset>
         <legend>Have a file? (optional)</legend>
-        <label>Link to your STL / 3MF / STEP or inspiration photos
-          <small>Google Drive, Dropbox, Printables, Thingiverse, Pinterest… Or just reply to our email with the file attached.</small>
+        <label>Upload your STL / 3MF / STEP
+          <small>Up to 50 MB. Also OK: OBJ, ZIP, PDF, photos.</small>
+          <div class="drop" id="drop">
+            <input id="file" type="file" accept=".stl,.3mf,.step,.stp,.obj,.zip,.png,.jpg,.jpeg,.pdf">
+            <span id="drop-text">Drag a file here or <u>choose one</u></span>
+          </div>
+        </label>
+        <label>Or a link
+          <small>Google Drive, Dropbox, Printables, Thingiverse, Pinterest inspiration…</small>
           <input name="file_link" type="url" placeholder="https://">
         </label>
       </fieldset>

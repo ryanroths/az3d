@@ -99,3 +99,9 @@ legend { font-weight: 800; padding: 0 8px; }
 /* footer */
 footer { border-top: 1px solid var(--line); padding: 32px 0; color: var(--muted); font-size: .92rem; }
 footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+
+/* file drop */
+.drop { position: relative; border: 2px dashed var(--line); border-radius: 12px; padding: 26px 16px; text-align: center; background: var(--panel); color: var(--muted); font-weight: 600; transition: border-color .15s, background .15s; }
+.drop.over { border-color: var(--accent); background: var(--bg-2); }
+.drop.has { border-style: solid; border-color: var(--sage); color: var(--text); }
+.drop input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }

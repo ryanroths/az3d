@@ -1,0 +1,16 @@
+name = "az3d-upload"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+account_id = "38009d8b997a189f87fa0163aa3e6a0c"
+
+routes = [
+  { pattern = "az3d.net/api/*", zone_name = "az3d.net" }
+]
+
+[[r2_buckets]]
+binding = "UPLOADS"
+bucket_name = "az3d-uploads"
+
+[vars]
+MAX_BYTES = "52428800"
+ALLOWED_EXT = "stl,3mf,step,stp,obj,zip,png,jpg,jpeg,pdf"
