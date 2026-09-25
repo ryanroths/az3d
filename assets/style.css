@@ -67,6 +67,7 @@ nav a.btn { color: #fff; padding: 9px 16px; }
 .strip-tag { font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; background: var(--accent); color: #fff; padding: 4px 9px; border-radius: 999px; }
 .strip-go { font-weight: 800; color: var(--gold); white-space: nowrap; }
 .strip:hover .strip-go { text-decoration: underline; }
+@media (max-width: 640px) { .strip { padding: 12px 16px; gap: 8px 12px; font-size: .95rem; } .strip-tag, .strip-more { display: none; } }
 
 .eyebrow { font-size: .8rem; font-weight: 800; color: var(--sage-dark); text-transform: uppercase; letter-spacing: .14em; margin-bottom: 12px; }
 
