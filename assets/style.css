@@ -60,6 +60,14 @@ nav a.btn { color: #fff; padding: 9px 16px; }
 .hero-logo img { width: 100%; height: auto; border-radius: 20px; }
 .hero p.lead { font-size: 1.25rem; color: var(--muted); max-width: 560px; }
 .hero .cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
+/* Cross-promo strip under the hero: PurgeLine. */
+.strip { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; padding: 14px 20px; background: var(--text); color: #fff; font-weight: 600; text-decoration: none; text-align: center; }
+.strip:hover { background: #1c1613; text-decoration: none; }
+.strip strong { color: var(--gold); }
+.strip-tag { font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; background: var(--accent); color: #fff; padding: 4px 9px; border-radius: 999px; }
+.strip-go { font-weight: 800; color: var(--gold); white-space: nowrap; }
+.strip:hover .strip-go { text-decoration: underline; }
+
 .eyebrow { font-size: .8rem; font-weight: 800; color: var(--sage-dark); text-transform: uppercase; letter-spacing: .14em; margin-bottom: 12px; }
 
 /* grids / cards */
